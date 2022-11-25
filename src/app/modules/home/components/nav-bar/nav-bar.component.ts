@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { ProductService } from 'src/app/services/products.service';
 
 @Component({
@@ -7,16 +7,23 @@ import { ProductService } from 'src/app/services/products.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private productsService: ProductService) { }
-
+  @Output() eventFilter= new EventEmitter<string>()
   categories:string[]= [];
+  @Input() category:string="";
+
+  constructor(private productsService: ProductService) { }
 
   ngOnInit(): void {
     this.getAllCategories()
   }
 
   getAllCategories():void{
-    this.productsService.getAllCategories().subscribe(category=> this.categories = category)
+    this.productsService.getAllCategories().subscribe(category=> this.categories= category );
+  }
+
+  filterProducts(): void{
+    console.log(this.category)
+    this.eventFilter.emit(this.category)
   }
 
 }

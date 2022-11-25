@@ -1,19 +1,27 @@
-<nav class="flex w-full h-[10vh] bg-blue-700">
-    <div class="w-[30%] flex justify-center items-center">
-        <h1>Logo</h1>
-    </div>
+<nav class="flex w-full h-[15vh] bg-blue-500 justify-center">
+  <div class=" w-[60%] flex  border-b-[0.5px] border-neutral-300">
+  <div class="w-[20%] flex justify-center items-center">
+    <h1 class=" font-title font-black text-neutral-100 text-4xl">Ji Store</h1>
+  </div>
 
-    <div class="w-[70%] ">
-        <ul class="gap-12 h-full flex justify-center items-center">
-            <a routerLink="/home">Home</a>
-            <a routerLink="/products">Products</a>
-            <select class=" bg-transparent">
-                <option value="default">Categories</option>
-                <option value="{{category}}" *ngFor="let category of categories"
-                [routerLink]="['/products']"
-                [queryParams]="{category: category }">{{category}}</option>
-            </select>
-            <a routerLink="/about">About</a>
-        </ul>
-    </div>
-</nav>  
+  <div class=" font-title  text-neutral-200 text-sm w-full font-medium">
+    <ul class="gap-12 h-full flex justify-end items-center">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/products">Products</a>
+      <select class="bg-transparent" [(ngModel)]="category">
+        <option value="category" disabled  selected >category</option>
+        <option
+          value="{{ category }}"
+          *ngFor="let category of categories"
+          [routerLink]="['/products']"
+          [queryParams]="{ category: category }"
+          (click)="filterProducts()"
+        >
+          {{ category }}
+        </option>
+      </select>
+      <a routerLink="/about">About</a>
+    </ul>
+  </div>
+</div>
+</nav>
