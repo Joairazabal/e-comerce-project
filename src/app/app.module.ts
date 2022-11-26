@@ -10,6 +10,12 @@ import { SideBarComponent } from './modules/home/components/side-bar/side-bar.co
 import { NavBarComponent } from './modules/home/components/nav-bar/nav-bar.component';
 import { ProductsComponent } from './modules/products/products.component';
 import { AboutComponent } from './modules/about/about.component';
+import { FormsModule } from '@angular/forms';
+import { DetailProductComponent } from './modules/detail-product/detail-product.component';
+import { SliderComponent } from './modules/home/components/slider/slider.component';
+import { LandingPageComponent } from './modules/landing-page/landing-page.component';
+import { SectionGenreComponent } from './modules/home/components/section-genre/section-genre.component';
+import { BannerComponent } from './modules/home/components/banner/banner.component';
 
 
 @NgModule({
@@ -21,12 +27,19 @@ import { AboutComponent } from './modules/about/about.component';
     SideBarComponent,
     NavBarComponent,
     ProductsComponent,
-    AboutComponent
+    AboutComponent,
+    DetailProductComponent,
+    SliderComponent,
+    LandingPageComponent,
+    SectionGenreComponent,
+    BannerComponent, 
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

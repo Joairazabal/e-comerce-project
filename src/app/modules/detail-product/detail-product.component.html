@@ -1,0 +1,35 @@
+<app-nav-bar></app-nav-bar>
+<div class="bg-slate-600 h-screen flex justify-center items-center" *ngIf="loading">
+  <div class="loader"></div>
+</div>
+<div class="flex justify-center items-center h-[90vh]" *ngIf="detail">
+  <div class="w-[70%] flex h-[25rem]">
+    <div class="w-[40%] flex justify-center items-center">
+      <img
+        src="{{ detail.image }}"
+        alt="{{ detail.id }}"
+        class="h-[80%] w-[80%]"
+      />
+    </div>
+    <div
+      class="w-[60%] bg-yellow-100 rounded-tr-xl rounded-br-xl flex flex-col items-center"
+    >
+    <div class=" w-[90%] h-full">
+      <div class="flex flex-col justify-center h-[35%] gap-2">
+        <div>
+          <h3 class="font-bold text-xl">{{ detail.title }}</h3>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg">${{ detail.price }}</h3>
+        </div>
+      </div>
+      <div class="h-[50%] flex mt-4">
+        <p>{{ detail.description }}</p>
+      </div>
+      <div class="h-[20%]">
+        <button class=" bg-zinc-200 px-4 py-1 rounded-lg">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

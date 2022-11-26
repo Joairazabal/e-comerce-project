@@ -26,4 +26,8 @@ export class ProductService {
   filterCategory(category:string):Observable<product[]>{
     return this.httpClient.get<product[]>(`${this.baseUrl}products/category/${category}`);
   }
+  getDetail(id:number):Observable<product>{
+    return this.httpClient.get<product>(`${this.baseUrl}products/${id}`)
+  }
+
 }

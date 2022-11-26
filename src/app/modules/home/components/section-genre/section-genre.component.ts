@@ -10,6 +10,7 @@ export class SectionGenreComponent implements OnInit {
   title!: string;
   @Input() subtitle!:string;
   @Input() img!:string;
+  @Input() router!:string;
   
   constructor() { 
   }

@@ -18,9 +18,11 @@
       </div>
       <div class="mt-8">
         <button
+        [routerLink]="'/products'"
+        [queryParams]="{genre: router}"
           class="bg-primary-100 px-4 py-2 text-center text-neutral-500 rounded-xl font-title lg:hover:scale-105 lg:hover:duration-500 sm:active:scale-105 sm:active:duration-500 shadow-primary-100 shadow-lg"
         >
-          Go clothes Men's
+          Go clothes {{title}}
         </button>
       </div>
     </div>

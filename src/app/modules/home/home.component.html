@@ -1,2 +1,32 @@
 <app-nav-bar></app-nav-bar>
-<app-container-products [products]="products"></app-container-products>
+
+<div
+  *ngIf="loading"
+  class="bg-neutral-500h-screen flex items-center justify-center"
+>
+  <div class="loader"></div>
+</div>
+
+<div
+  class="flex flex-col gap-8 bg-slate-600 items-center w-full mt-10"
+  *ngIf="products"
+>
+  <div class="w-[70%]">
+    <app-section-genre
+      [title]="titleMen"
+      [subtitle]="subtitleMen"
+      [img]="imgMen"
+      [router]="routerMen"
+    ></app-section-genre>
+    <app-slider type="jewelery"></app-slider>
+    <app-section-genre
+      [title]="titleFem"
+      [subtitle]="subtitleFem"
+      [img]="imgFem"
+      [router]="routerFem"
+    ></app-section-genre>
+    <app-slider type="offerts"></app-slider>
+    <app-banner></app-banner>
+    <app-slider type="electronics"></app-slider>
+  </div>
+</div>
