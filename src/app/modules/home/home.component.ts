@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   titleMen= "Men's clothes";
   subtitleMen= "Within Ji Store you will find premium quality clothing of all sizes,world-renowned brands with excellent prices. We also have watches and accessories.";
   imgMen= "../../../assets/hombre.jpg";
-  titleFem= 'womenswear';
+  titleFem= "Women's clothes";
   subtitleFem= 'Within Ji Store you will find premium quality clothing of all sizes,world-renowned brands with excellent prices. We also have watches and accessories."'
   imgFem= '../../../assets/mujer.jpg'
   routerMen= 'Mens'

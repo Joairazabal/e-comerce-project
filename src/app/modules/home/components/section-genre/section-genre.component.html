@@ -1,18 +1,18 @@
 <div class=" w-full flex justify-center">
-<div class="flex gap-[4rem] justify-between">
+<div class="lg:flex lg:gap-[4rem] sm:gap-[2rem] lg:justify-between sm:grid sm:justify-items-center">
     <img
       src="{{img}}"
-      class="h-[22rem] w-[30%] rounded-xl shadow-md"
+      class="lg:h-[22rem] lg:w-[30%] sm:w-48 sm:h-64 rounded-xl shadow-md"
       alt=""
     />
-    <div class="w-[60%] flex flex-col gap-8">
+    <div class="lg:w-[60%] sm:w-[80%] lg:items-start flex flex-col sm:items-center lg:gap-8 sm:gap-0">
       <div>
-        <h3 class="font-title font-bold text-3xl text-neutral-600">
+        <h3 class="font-title font-bold lg:text-3xl sm:text-2xl text-neutral-600 sm:text-center lg:text-start">
           {{title}}
         </h3>
       </div>
       <div>
-        <p class="font-title text-xl text-neutral-200 ">
+        <p class="font-title lg:text-xl text-neutral-200 sm:text-center lg:text-start sm:text-lg ">
           {{subtitle}}
         </p>
       </div>
@@ -20,7 +20,8 @@
         <button
         [routerLink]="'/products'"
         [queryParams]="{genre: router}"
-          class="bg-primary-100 px-4 py-2 text-center text-neutral-500 rounded-xl font-title lg:hover:scale-105 lg:hover:duration-500 sm:active:scale-105 sm:active:duration-500 shadow-primary-100 shadow-lg"
+          class="bg-primary-100 px-4 py-2 text-center text-neutral-500 rounded-xl font-title 
+          lg:hover:scale-105 lg:hover:duration-500 sm:active:scale-105 sm:active:duration-500 shadow-primary-100 shadow-lg"
         >
           Go clothes {{title}}
         </button>

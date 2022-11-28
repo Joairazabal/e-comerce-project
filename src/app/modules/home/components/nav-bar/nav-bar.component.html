@@ -1,14 +1,14 @@
-<nav class="flex w-full h-[15vh] bg-blue-500 justify-center">
-  <div class=" w-[60%] flex  border-b-[0.5px] border-neutral-300">
+<nav class="flex w-full h-[15vh] bg-blue-500 justify-center top-0 sticky bg-neutral-500">
+  <div class=" lg:w-[60%] sm:w-[90%] flex  border-b-[0.5px] border-neutral-300">
   <div class="w-[20%] flex justify-center items-center">
-    <h1 class=" font-title font-black text-neutral-100 text-4xl cursor-pointer" [routerLink]="'/home'">Ji Store</h1>
+    <h1 class=" font-title font-black text-neutral-100 lg:text-4xl sm:text-2xl cursor-pointer sm:text-center" [routerLink]="'/home'">Ji Store</h1>
   </div>
 
   <div class=" font-title  text-neutral-200 text-sm w-full font-medium">
-    <ul class="gap-12 h-full flex justify-end items-center">
+    <ul class="lg:gap-12 sm:gap-4 h-full flex justify-end items-center">
       <a routerLink="/home">Home</a>
       <a routerLink="/products">Products</a>
-      <select class="bg-transparent" [(ngModel)]="category">
+      <select class="bg-transparent sm:w-16" [(ngModel)]="category">
         <option value="category" disabled  selected >category</option>
         <option
           value="{{ category }}"

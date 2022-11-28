@@ -40,3 +40,7 @@
     background: rgb(8,15,40);
     background: linear-gradient(0deg, rgba(8,15,40,0.7231092266007966) 0%, rgba(3,4,8,0.4598039044719451) 53%);
    }
+   *{
+    margin: 0%;
+    padding: 0%;
+   }
