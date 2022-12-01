@@ -1,15 +1,7 @@
 <app-nav-bar></app-nav-bar>
 
-<div
-  *ngIf="loading"
-  class="bg-neutral-500h-screen flex items-center justify-center"
->
-  <div class="loader"></div>
-</div>
-
-<div
+<div  *ngIf="products else noProducts"
   class="flex flex-col gap-8 bg-slate-600 items-center w-full mt-10"
-  *ngIf="products"
 >
   <div class="lg:w-[70%]">
     <app-section-genre
@@ -31,5 +23,11 @@
     <app-banner></app-banner>
   </div>
   <app-slider type="electronics"></app-slider>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>
+
+<ng-template #noProducts>
+  <div class=" h-[85vh] flex items-center justify-center ">
+  <div class="loader"></div>
+</div>
+</ng-template>

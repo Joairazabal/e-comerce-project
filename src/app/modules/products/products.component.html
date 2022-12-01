@@ -1,18 +1,42 @@
 <app-nav-bar (eventFilter)="filterProducts($event)"></app-nav-bar>
-<div class=" flex justify-center">
-<div class=" gap-6 w-[80%] my-12">
-    <h3 class=" my-2 font-title text-xl font-semibold">Filter Genre</h3>
-<select class=" font-title bg-neutral-400 text-lg" [(ngModel)]="genre">
-    <option value="" disabled >Genre</option>
-    <option value="Mens"  (click)="filterGenre()"
-    [routerLink]="['/products']"
-    [queryParams]="{ genre: 'Mens' }">Men</option>
-    <option value="Women's" [routerLink]="['/products']" [queryParams]="{ genre: 'Women' }" (click)="filterGenre()
-    ">Women</option>
+<div class="flex justify-center">
+  <div class="gap-6 w-[80%] my-12">
+    <h3 class="my-2 font-title text-xl font-semibold">Filter Genre</h3>
+    <select class="font-title bg-neutral-400 text-lg" [(ngModel)]="genre">
+      <option value="" disabled>Genre</option>
+      <option
+        value="Mens"
+        (click)="filterGenre()"
+        [routerLink]="['/products']"
+        [queryParams]="{ genre: 'Mens' }"
+      >
+        Men
+      </option>
+      <option
+        value="Women's"
+        [routerLink]="['/products']"
+        [queryParams]="{ genre: 'Women' }"
+        (click)="filterGenre()"
+      >
+        Women
+      </option>
+    </select>
+  </div>
+</div>
 
-</select>
-</div>
-</div>
-<div class=" w-full flex justify-center my-10">
+<div
+  class="w-full flex flex-col items-center "
+  *ngIf="products; else noProducts"
+>
+<div class=" mb-10">
   <app-container-products [products]="products"></app-container-products>
 </div>
+  <app-footer></app-footer>
+</div>
+
+<ng-template #noProducts
+  >
+  <div class="lg:h-[40vh] flex items-center justify-center">
+    <div class="loader"></div>
+  </div>
+</ng-template>

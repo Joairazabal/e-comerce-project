@@ -4,7 +4,7 @@ import {
   Input,
   OnChanges,
   SimpleChanges,
-  DoCheck,
+  DoCheck
 } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import product from 'src/app/models/products';
@@ -15,9 +15,11 @@ import { ProductService } from 'src/app/services/products.service';
   templateUrl: './products.component.html',
 })
 export class ProductsComponent implements OnInit {
-  products: product[] = [];
+  products!: product[];
   category: string = '';
+  loading= false
   @Input() genre: string= '';
+
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
