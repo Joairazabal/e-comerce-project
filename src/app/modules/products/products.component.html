@@ -3,7 +3,7 @@
 <div class=" gap-6 w-[80%] my-12">
     <h3 class=" my-2 font-title text-xl font-semibold">Filter Genre</h3>
 <select class=" font-title bg-neutral-400 text-lg" [(ngModel)]="genre">
-    <option value="" disabled selected>genre</option>
+    <option value="" disabled >Genre</option>
     <option value="Mens"  (click)="filterGenre()"
     [routerLink]="['/products']"
     [queryParams]="{ genre: 'Mens' }">Men</option>

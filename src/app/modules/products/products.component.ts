@@ -27,7 +27,9 @@ export class ProductsComponent implements OnInit {
     this.route.queryParams.subscribe((el) => (this.category = el['category']));
     this.route.queryParams.subscribe((el) => (this.genre = el['genre']));
     if (this.category) {
-      this.filterProducts(this.category);
+      this.category !== 'all'?
+      this.filterProducts(this.category):
+      this.getAllProducts();
     }
     else if(this.genre){
       this.filterGenre()
@@ -42,7 +44,7 @@ export class ProductsComponent implements OnInit {
     this.productService
       .filterCategory(category)
       .subscribe((p) => (this.products = p)):
-    this.getAllProducts
+    this.getAllProducts()
   }
 
   filterGenre(){

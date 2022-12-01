@@ -25,7 +25,8 @@ module.exports = {
             }
         },
         fontFamily:{
-            title: ['Kumbh Sans', 'sans-serif']
+            title: ['Kumbh Sans', 'sans-serif'],
+            logo: ['Varela Round', 'sans-serif']
         },
         screens: {
             sm: "360px",

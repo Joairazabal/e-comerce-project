@@ -6,7 +6,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContainerProductsComponent } from './modules/home/components/container-products/container-products.component';
 import { CardProductComponent } from './modules/home/components/card-product/card-product.component';
-import { NavBarComponent } from './modules/home/components/nav-bar/nav-bar.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProductsComponent } from './modules/products/products.component';
 import { AboutComponent } from './modules/about/about.component';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +15,7 @@ import { SliderComponent } from './modules/home/components/slider/slider.compone
 import { LandingPageComponent } from './modules/landing-page/landing-page.component';
 import { SectionGenreComponent } from './modules/home/components/section-genre/section-genre.component';
 import { BannerComponent } from './modules/home/components/banner/banner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BannerComponent } from './modules/home/components/banner/banner.compone
     SliderComponent,
     LandingPageComponent,
     SectionGenreComponent,
-    BannerComponent, 
+    BannerComponent,
+    FooterComponent, 
    
   ],
   imports: [

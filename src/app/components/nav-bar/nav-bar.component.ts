@@ -22,7 +22,6 @@ export class NavBarComponent implements OnInit {
   }
 
   filterProducts(): void{
-    console.log(this.category)
     this.eventFilter.emit(this.category)
   }
 

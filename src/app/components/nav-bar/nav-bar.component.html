@@ -1,0 +1,29 @@
+<nav class="flex w-full h-[15vh] bg-blue-500 justify-center top-0 sticky bg-neutral-500">
+  <div class=" lg:w-[60%] sm:w-[90%] flex  border-b-[0.5px] border-neutral-300">
+  <div class="w-[20%] flex justify-center items-center">
+    <h1 class=" font-logo font-bold text-neutral-100 lg:text-4xl sm:text-2xl cursor-pointer sm:text-center" [routerLink]="'/home'">Ji Store</h1>
+  </div>
+
+  <div class=" font-title  text-neutral-200 text-sm w-full font-medium">
+    <ul class="lg:gap-12 sm:gap-4 h-full flex justify-end items-center">
+      <a routerLink="/home" class="line-hover sm:active:duration-300 sm:active:scale-105">Home</a>
+      <a routerLink="/products" class="line-hover sm:active:bg-primary-100 sm:active:duration-300 sm:active:scale-105">Products</a>
+      <select class="bg-transparent lg:w-28 sm:w-16" [(ngModel)]="category">
+        <option value="" disabled>Categories</option>
+        <option value="all" [routerLink]="['/products']
+        " [queryParams]="{category: 'all'}" (click)="filterProducts()">All</option>
+        <option
+          value="{{ category }}"
+          *ngFor="let category of categories"
+          [routerLink]="['/products']"
+          [queryParams]="{ category: category }"
+          (click)="filterProducts()"
+        >
+          {{ category }}
+        </option>
+      </select>
+      <a routerLink="/about" class="line-hover sm:active:duration-300 sm:active:scale-105">About</a>
+    </ul>
+  </div>
+</div>
+</nav>
